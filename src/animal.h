@@ -27,6 +27,9 @@ class Animal{
         float radius;
         Color color;
         float speed;
+        void MaxAngle();
         void Add();
         void Pop();
+        void HeadRestriction();
+        float maxHeadAngle;
 };
