@@ -29,6 +29,7 @@ class Animal{
         float speed;
         void MaxAngle();
         void Add();
+        bool draw;
         void Pop();
         void HeadRestriction();
         float maxHeadAngle;

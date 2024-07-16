@@ -11,6 +11,7 @@ Animal::Animal() : circle(radius, chainLength)
     speed=1;
     maxAngle=PI/2;
     maxHeadAngle=PI/2;
+    draw=true;
 }
 
 void Animal::Draw()
@@ -22,7 +23,7 @@ void Animal::Draw()
 
     //  Body
     for(long long int i=0;i<circles.size();i++){
-        if(i<circles.size()){
+        if(i<circles.size() && draw){
             circles[i].Draw();
         }
         float theta=atan((circles[i].head.y-circles[i].position.y)/(circles[i].head.x-circles[i].position.x));
@@ -96,6 +97,7 @@ void Animal::Gui()
     if(GuiButton((Rectangle){100,350,40,20},"Pop")){
         Pop();
     }
+    GuiCheckBox((Rectangle){100,380,20,20},"Draw",&draw);
 }
 
 void Animal::Chained()
